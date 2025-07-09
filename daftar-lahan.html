@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftarkan Lahan - NebengTani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        secondary: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            300: '#d6d3d1',
+                            400: '#a8a29e',
+                            500: '#78716c',
+                            600: '#57534e',
+                            700: '#44403c',
+                            800: '#292524',
+                            900: '#1c1917',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { 
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': { 
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans bg-white text-gray-800">
+    <!-- Premium Navigation -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-primary-600 flex items-center justify-center shadow-md">
+                        <i class="fas fa-leaf text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-serif font-bold text-gray-800">Nebeng<span class="text-primary-600">Tani</span></span>
+                </a>
+                
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary-600 transition duration-300">Beranda</a>
+                    <a href="cari-lahan.html" class="text-gray-600 hover:text-primary-600 transition duration-300">Cari Lahan</a>
+                    <a href="daftar-lahan.html" class="text-primary-600 font-medium border-b-2 border-primary-600 pb-1">Daftarkan Lahan</a>
+                    <a href="tentang-kami.html" class="text-gray-600 hover:text-primary-600 transition duration-300">Tentang Kami</a>
+                    <a href="#" class="ml-4 bg-primary-600 hover:bg-primary-700 text-white px-5 py-2 rounded-full transition duration-300 shadow-md hover:shadow-lg">
+                        Masuk <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <button id="mobile-menu-button" class="lg:hidden text-gray-600 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-600 py-2 border-b border-gray-100 hover:text-primary-600 transition duration-300">Beranda</a>
+                <a href="cari-lahan.html" class="text-gray-600 py-2 border-b border-gray-100 hover:text-primary-600 transition duration-300">Cari Lahan</a>
+                <a href="daftar-lahan.html" class="text-primary-600 font-medium py-2 border-b border-gray-100">Daftarkan Lahan</a>
+                <a href="tentang-kami.html" class="text-gray-600 py-2 border-b border-gray-100 hover:text-primary-600 transition duration-300">Tentang Kami</a>
+                <a href="#" class="bg-primary-600 text-white px-4 py-3 rounded-lg text-center mt-2 shadow-md hover:bg-primary-700 transition duration-300">
+                    Masuk
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-3">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center text-sm text-gray-600">
+                <a href="index.html" class="hover:text-primary-600">Beranda</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <span class="text-gray-800">Daftarkan Lahan</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Form Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                <!-- Form Header -->
+                <div class="bg-primary-600 text-white p-8">
+                    <h1 class="text-2xl font-serif font-bold">Daftarkan Lahan Kosong Anda</h1>
+                    <p class="mt-2 opacity-90">Isi form berikut untuk mendaftarkan lahan kosong yang ingin Anda sewakan</p>
+                </div>
+
+                <!-- Form Content -->
+                <div class="p-8">
+                    <form id="land-form" class="space-y-6">
+                        <!-- Section 1: Informasi Dasar -->
+                        <div>
+                            <h2 class="text-xl font-serif font-semibold mb-4 pb-2 border-b border-gray-100">Informasi Dasar</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium mb-1 text-gray-700">Judul Listing</label>
+                                    <input type="text" placeholder="Contoh: Lahan Subur di Depok" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-1 text-gray-700">Jenis Lahan</label>
+                                    <select class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required>
+                                        <option value="">Pilih Jenis Lahan</option>
+                                        <option value="kebun">Kebun</option>
+                                        <option value="sawah">Sawah</option>
+                                        <option value="pekarangan">Pekarangan</option>
+                                        <option value="hidroponik">Hidroponik</option>
+                                        <option value="lainnya">Lainnya</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-1 text-gray-700">Luas Lahan (m²)</label>
+                                    <input type="number" placeholder="Contoh: 100" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-1 text-gray-700">Harga Sewa per Bulan</label>
+                                    <div class="relative">
+                                        <span class="absolute left-3 top-1/2 transform -translate-y-1/2">Rp</span>
+                                        <input type="text" placeholder="Contoh: 500000" class="w-full pl-10 px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 2: Lokasi -->
+                        <div>
+                            <h2 class="text-xl font-serif font-semibold mb-4 pb-2 border-b border-gray-100">Lokasi Lahan</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium mb-1 text-gray-700">Provinsi</label>
+                                    <select class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required>
+                                        <option value="">Pilih Provinsi</option>
+                                        <option value="jakarta">DKI Jakarta</option>
+                                        <option value="banten">Banten</option>
+                                        <option value="jabar">Jawa Barat</option>
+                                        <option value="jateng">Jawa Tengah</option>
+                                        <option value="jatim">Jawa Timur</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-1 text-gray-700">Kota/Kabupaten</label>
+                                    <select class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required>
+                                        <option value="">Pilih Kota/Kabupaten</option>
+                                        <option value="jaksel">Jakarta Selatan</option>
+                                        <option value="tangerang">Tangerang</option>
+                                        <option value="tangsel">Tangerang Selatan</option>
+                                        <option value="depok">Depok</option>
+                                        <option value="bogor">Bogor</option>
+                                    </select>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-sm font-medium mb-1 text-gray-700">Alamat Lengkap</label>
+                                    <textarea rows="2" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" placeholder="Jl. Contoh No. 123, RT/RW, Kelurahan, Kecamatan" required></textarea>
+                                </div>
+                                <div class="md:col-span-2">
+                                    <label class="block text-sm font-medium mb-1 text-gray-700">Pin Lokasi di Peta</label>
+                                    <div class="bg-gray-200 h-48 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-map-marked-alt text-4xl text-gray-400"></i>
+                                    </div>
+                                    <button type="button" class="mt-2 text-sm text-primary-600 hover:text-primary-700">
+                                        <i class="fas fa-map-marker-alt mr-1"></i> Tandai Lokasi di Peta
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 3: Deskripsi -->
+                        <div>
+                            <h2 class="text-xl font-serif font-semibold mb-4 pb-2 border-b border-gray-100">Deskripsi Lahan</h2>
+                            <div>
+                                <label class="block text-sm font-medium mb-1 text-gray-700">Deskripsi Lengkap</label>
+                                <textarea rows="4" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" placeholder="Jelaskan kondisi lahan, fasilitas yang tersedia, jenis tanaman yang cocok, dll." required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Section 4: Fasilitas -->
+                        <div>
+                            <h2 class="text-xl font-serif font-semibold mb-4 pb-2 border-b border-gray-100">Fasilitas</h2>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="water" class="rounded text-primary-600 focus:ring-primary-500">
+                                    <label for="water" class="ml-2 text-sm text-gray-700">Akses Air</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="fence" class="rounded text-primary-600 focus:ring-primary-500">
+                                    <label for="fence" class="ml-2 text-sm text-gray-700">Pagar</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="irrigation" class="rounded text-primary-600 focus:ring-primary-500">
+                                    <label for="irrigation" class="ml-2 text-sm text-gray-700">Irigasi</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="storage" class="rounded text-primary-600 focus:ring-primary-500">
+                                    <label for="storage" class="ml-2 text-sm text-gray-700">Gudang</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="electricity" class="rounded text-primary-600 focus:ring-primary-500">
+                                    <label for="electricity" class="ml-2 text-sm text-gray-700">Listrik</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="parking" class="rounded text-primary-600 focus:ring-primary-500">
+                                    <label for="parking" class="ml-2 text-sm text-gray-700">Parkir</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 5: Foto Lahan -->
+                        <div>
+                            <h2 class="text-xl font-serif font-semibold mb-4 pb-2 border-b border-gray-100">Foto Lahan</h2>
+                            <div>
+                                <label class="block text-sm font-medium mb-1 text-gray-700">Unggah Foto (Maksimal 5 foto)</label>
+                                <div class="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-primary-500 transition duration-300">
+                                    <div class="flex flex-col items-center justify-center">
+                                        <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-3"></i>
+                                        <p class="text-sm text-gray-600 mb-2">Seret dan lepas file di sini atau klik untuk memilih</p>
+                                        <p class="text-xs text-gray-500">Format: JPG, PNG (Maks. 5MB per gambar)</p>
+                                    </div>
+                                    <input type="file" class="hidden" id="land-photos" multiple accept="image/*">
+                                </div>
+                                <div class="grid grid-cols-3 gap-3 mt-4" id="preview-container">
+                                    <!-- Preview gambar akan muncul di sini -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Section 6: Kontak -->
+                        <div>
+                            <h2 class="text-xl font-serif font-semibold mb-4 pb-2 border-b border-gray-100">Informasi Kontak</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium mb-1 text-gray-700">Nama Pemilik</label>
+                                    <input type="text" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-1 text-gray-700">Nomor Telepon</label>
+                                    <input type="tel" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-1 text-gray-700">Email</label>
+                                    <input type="email" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" required>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium mb-1 text-gray-700">WhatsApp</label>
+                                    <input type="tel" class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Terms -->
+                        <div>
+                            <div class="flex items-start">
+                                <input type="checkbox" id="terms" class="mt-1 rounded text-primary-600 focus:ring-primary-500" required>
+                                <label for="terms" class="ml-2 text-sm text-gray-700">Saya menyetujui <a href="#" class="text-primary-600 hover:underline">Syarat dan Ketentuan</a> serta <a href="#" class="text-primary-600 hover:underline">Kebijakan Privasi</a> NebengTani</label>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="flex justify-end">
+                            <button type="submit" class="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-medium transition duration-300 shadow-md hover:shadow-lg">
+                                <i class="fas fa-paper-plane mr-2"></i> Kirim Pendaftaran
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-xl p-8 max-w-md mx-4 text-center">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-check text-3xl text-green-600"></i>
+            </div>
+            <h3 class="text-2xl font-serif font-bold mb-3">Pendaftaran Berhasil!</h3>
+            <p class="text-gray-600 mb-6">Terima kasih telah mendaftarkan lahan Anda. Tim kami akan memverifikasi data dan menghubungi Anda dalam 1x24 jam.</p>
+            <a href="index.html" class="block w-full bg-primary-600 hover:bg-primary-700 text-white py-3 rounded-lg font-medium transition duration-300 shadow-md hover:shadow-lg">
+                Kembali ke Beranda
+            </a>
+        </div>
+    </div>
+
+    <!-- Premium Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4 flex items-center">
+                        <div class="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center mr-2">
+                            <i class="fas fa-leaf text-white"></i>
+                        </div>
+                        NebengTani
+                    </h3>
+                    <p class="text-gray-400 mb-4">Platform premium peminjaman lahan tidur untuk kegiatan berkebun modern.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-serif font-semibold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Beranda</a></li>
+                        <li><a href="cari-lahan.html" class="text-gray-400 hover:text-white transition duration-300">Cari Lahan</a></li>
+                        <li><a href="daftar-lahan.html" class="text-gray-400 hover:text-white transition duration-300">Daftarkan Lahan</a></li>
+                        <li><a href="tentang-kami.html" class="text-gray-400 hover:text-white transition duration-300">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif font-semibold mb-4">Kontak Kami</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 w-5 text-center"></i>
+                            hello@nebengtani.id
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 w-5 text-center"></i>
+                            +62 812 3456 7890
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 w-5 text-center"></i>
+                            Jakarta, Indonesia
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Dapatkan info terbaru tentang lahan dan tips berkebun.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Email Anda" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-primary-600 hover:bg-primary-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 NebengTani. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>

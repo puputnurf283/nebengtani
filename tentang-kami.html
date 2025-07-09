@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - NebengTani</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                        },
+                        secondary: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            300: '#d6d3d1',
+                            400: '#a8a29e',
+                            500: '#78716c',
+                            600: '#57534e',
+                            700: '#44403c',
+                            800: '#292524',
+                            900: '#1c1917',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 1s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { 
+                                opacity: '0',
+                                transform: 'translateY(20px)'
+                            },
+                            '100%': { 
+                                opacity: '1',
+                                transform: 'translateY(0)'
+                            },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="font-sans bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-lg bg-primary-600 flex items-center justify-center shadow-md">
+                        <i class="fas fa-leaf text-white text-lg"></i>
+                    </div>
+                    <span class="text-2xl font-serif font-bold text-gray-800">Nebeng<span class="text-primary-600">Tani</span></span>
+                </a>
+                
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-primary-600 transition duration-300">Beranda</a>
+                    <a href="cari-lahan.html" class="text-gray-600 hover:text-primary-600 transition duration-300">Cari Lahan</a>
+                    <a href="daftar-lahan.html" class="text-gray-600 hover:text-primary-600 transition duration-300">Daftarkan Lahan</a>
+                    <a href="tentang-kami.html" class="text-primary-600 font-medium border-b-2 border-primary-600 pb-1">Tentang Kami</a>
+                    <a href="#" class="ml-4 bg-primary-600 hover:bg-primary-700 text-white px-5 py-2 rounded-full transition duration-300 shadow-md hover:shadow-lg">
+                        Masuk <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <button id="mobile-menu-button" class="lg:hidden text-gray-600 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="index.html" class="text-primary-600 font-medium py-2 border-b border-gray-100">Beranda</a>
+                <a href="cari-lahan.html" class="text-gray-600 py-2 border-b border-gray-100 hover:text-primary-600 transition duration-300">Cari Lahan</a>
+                <a href="daftar-lahan.html" class="text-gray-600 py-2 border-b border-gray-100 hover:text-primary-600 transition duration-300">Daftarkan Lahan</a>
+                <a href="tentang-kami.html" class="text-primary-600 font-medium py-2 border-b border-gray-100">Tentang Kami</a>
+                <a href="#" class="bg-primary-600 text-white px-4 py-3 rounded-lg text-center mt-2 shadow-md hover:bg-primary-700 transition duration-300">
+                    Masuk
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="bg-gray-50 py-3">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center text-sm text-gray-600">
+                <a href="index.html" class="hover:text-primary-600">Beranda</a>
+                <i class="fas fa-chevron-right mx-2 text-xs"></i>
+                <span class="text-gray-800">Tentang Kami</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section class="py-12">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                <!-- Header -->
+                <div class="bg-primary-600 text-white p-6">
+                    <h1 class="text-2xl font-bold">Tentang NebengTani</h1>
+                </div>
+
+                <!-- Content -->
+                <div class="p-6 md:p-8">
+                    <div class="mb-8">
+                        <h2 class="text-xl font-semibold mb-4">Visi Kami</h2>
+                        <p class="text-gray-600 mb-6">
+                            NebengTani hadir dengan visi untuk memanfaatkan lahan tidur di perkotaan dan sekitarnya untuk kegiatan produktif seperti berkebun, urban farming, dan hidroponik. Kami percaya bahwa setiap lahan kosong memiliki potensi untuk menciptakan nilai tambah, baik secara ekonomi maupun lingkungan.
+                        </p>
+                        
+                        <h2 class="text-xl font-semibold mb-4">Misi Kami</h2>
+                        <ul class="list-disc pl-5 text-gray-600 space-y-2 mb-6">
+                            <li>Menyediakan platform yang menghubungkan pemilik lahan dengan mereka yang membutuhkan lahan untuk berkebun</li>
+                            <li>Mendorong pemanfaatan lahan tidur untuk kegiatan produktif</li>
+                            <li>Meningkatkan kesadaran masyarakat akan pentingnya urban farming</li>
+                            <li>Menciptakan komunitas yang saling mendukung dalam kegiatan pertanian perkotaan</li>
+                        </ul>
+
+                        <h2 class="text-xl font-semibold mb-4">Tim Kami</h2>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                            <div class="bg-gray-50 p-4 rounded-lg text-center">
+                                <img src="assets/images/team1.jpg" alt="Team Member" class="w-24 h-24 rounded-full object-cover mx-auto mb-3">
+                                <h3 class="font-medium">Andi Wijaya</h3>
+                                <p class="text-sm text-gray-600">Founder & CEO</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-center">
+                                <img src="assets/images/team2.jpg" alt="Team Member" class="w-24 h-24 rounded-full object-cover mx-auto mb-3">
+                                <h3 class="font-medium">Budi Santoso</h3>
+                                <p class="text-sm text-gray-600">CTO</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg text-center">
+                                <img src="assets/images/team3.jpg" alt="Team Member" class="w-24 h-24 rounded-full object-cover mx-auto mb-3">
+                                <h3 class="font-medium">Siti Rahayu</h3>
+                                <p class="text-sm text-gray-600">CMO</p>
+                            </div>
+                        </div>
+
+                        <h2 class="text-xl font-semibold mb-4">FAQ (Pertanyaan Umum)</h2>
+                        <div class="space-y-4">
+                            <!-- FAQ Item 1 -->
+                            <div class="border rounded-lg overflow-hidden">
+                                <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                                    <span class="font-medium text-left">Bagaimana cara meminjam lahan di NebengTani?</span>
+                                    <i class="fas fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="faq-content hidden p-4 border-t">
+                                    <p class="text-gray-600">
+                                        1. Daftar akun sebagai pencari lahan<br>
+                                        2. Cari lahan yang sesuai dengan kebutuhan Anda<br>
+                                        3. Ajukan permohonan peminjaman<br>
+                                        4. Tunggu konfirmasi dari pemilik lahan<br>
+                                        5. Setelah disetujui, lakukan pembayaran dan mulai berkebun
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 2 -->
+                            <div class="border rounded-lg overflow-hidden">
+                                <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                                    <span class="font-medium text-left">Berapa biaya untuk mendaftarkan lahan saya?</span>
+                                    <i class="fas fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="faq-content hidden p-4 border-t">
+                                    <p class="text-gray-600">
+                                        Pendaftaran lahan di NebengTani sepenuhnya gratis. Kami hanya mengambil komisi sebesar 10% dari nilai sewa setelah transaksi berhasil dilakukan.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 3 -->
+                            <div class="border rounded-lg overflow-hidden">
+                                <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                                    <span class="font-medium text-left">Apa saja dokumen yang diperlukan untuk meminjam lahan?</span>
+                                    <i class="fas fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="faq-content hidden p-4 border-t">
+                                    <p class="text-gray-600">
+                                        Untuk meminjam lahan, Anda hanya perlu menyiapkan:<br>
+                                        - Fotokopi KTP<br>
+                                        - Surat pernyataan penggunaan lahan (format tersedia di platform)<br>
+                                        Beberapa pemilik lahan mungkin meminta dokumen tambahan sesuai kebijakan mereka.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 4 -->
+                            <div class="border rounded-lg overflow-hidden">
+                                <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                                    <span class="font-medium text-left">Bagaimana sistem pembayaran sewa lahan?</span>
+                                    <i class="fas fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="faq-content hidden p-4 border-t">
+                                    <p class="text-gray-600">
+                                        Pembayaran sewa lahan dilakukan melalui platform NebengTani dengan sistem escrow. Dana akan disimpan terlebih dahulu di sistem dan akan diteruskan ke pemilik lahan setelah masa sewa dimulai. Pembayaran dapat dilakukan secara bulanan atau sesuai kesepakatan dengan pemilik lahan.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- FAQ Item 5 -->
+                            <div class="border rounded-lg overflow-hidden">
+                                <button class="faq-toggle w-full flex justify-between items-center p-4 bg-gray-50 hover:bg-gray-100 transition">
+                                    <span class="font-medium text-left">Apa yang terjadi jika terjadi kerusakan pada lahan?</span>
+                                    <i class="fas fa-chevron-down transition-transform"></i>
+                                </button>
+                                <div class="faq-content hidden p-4 border-t">
+                                    <p class="text-gray-600">
+                                        Segala bentuk kerusakan yang terjadi akibat kelalaian penyewa menjadi tanggung jawab penyewa. Kami menyarankan untuk:<br>
+                                        1. Mendokumentasikan kondisi lahan sebelum dan setelah penggunaan<br>
+                                        2. Berkomunikasi dengan baik dengan pemilik lahan<br>
+                                        3. Memahami perjanjian sewa sebelum menandatanganinya<br>
+                                        NebengTani dapat menjadi mediator jika terjadi perselisihan.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-12 bg-primary-600 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold mb-4">Masih Ada Pertanyaan?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Tim kami siap membantu Anda. Hubungi kami melalui berbagai channel berikut.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl">
+                    <i class="fas fa-phone-alt text-3xl mb-4"></i>
+                    <h3 class="font-semibold mb-2">Telepon</h3>
+                    <p class="text-primary-100">+62 123 4567 890</p>
+                    <p class="text-sm text-primary-200">Senin-Jumat, 09:00-17:00</p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl">
+                    <i class="fas fa-envelope text-3xl mb-4"></i>
+                    <h3 class="font-semibold mb-2">Email</h3>
+                    <p class="text-primary-100">hello@nebengtani.id</p>
+                    <p class="text-sm text-primary-200">Respon dalam 1x24 jam</p>
+                </div>
+                <div class="bg-white bg-opacity-10 p-6 rounded-xl">
+                    <i class="fab fa-whatsapp text-3xl mb-4"></i>
+                    <h3 class="font-semibold mb-2">WhatsApp</h3>
+                    <p class="text-primary-100">+62 812 3456 7890</p>
+                    <p class="text-sm text-primary-200">Respon cepat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-serif font-bold mb-4 flex items-center">
+                        <div class="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center mr-2">
+                            <i class="fas fa-leaf text-white"></i>
+                        </div>
+                        NebengTani
+                    </h3>
+                    <p class="text-gray-400 mb-4">Platform premium peminjaman lahan tidur untuk kegiatan berkebun modern.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition duration-300">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary-600 transition duration-300">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-serif font-semibold mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition duration-300">Beranda</a></li>
+                        <li><a href="cari-lahan.html" class="text-gray-400 hover:text-white transition duration-300">Cari Lahan</a></li>
+                        <li><a href="daftar-lahan.html" class="text-gray-400 hover:text-white transition duration-300">Daftarkan Lahan</a></li>
+                        <li><a href="tentang-kami.html" class="text-gray-400 hover:text-white transition duration-300">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif font-semibold mb-4">Kontak Kami</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 w-5 text-center"></i>
+                            hello@nebengtani.id
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 w-5 text-center"></i>
+                            +62 812 3456 7890
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-map-marker-alt mr-3 w-5 text-center"></i>
+                            Jakarta, Indonesia
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Dapatkan info terbaru tentang lahan dan tips berkebun.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Email Anda" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button type="submit" class="bg-primary-600 hover:bg-primary-700 px-4 py-2 rounded-r-lg">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 NebengTani. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
