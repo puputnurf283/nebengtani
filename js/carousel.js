@@ -1,4 +1,3 @@
-// Change Main Image in Detail Page
 function changeMainImage(thumbnail) {
     const mainImage = document.getElementById('main-image');
     mainImage.src = thumbnail.src;

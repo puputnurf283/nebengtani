@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const content = toggle.nextElementSibling;
             const icon = toggle.querySelector('i');
 
-            // Tutup semua konten kecuali yang diklik
+            // Close all content except the one clicked
             document.querySelectorAll('.faq-content').forEach(item => {
                 if (item !== content) item.classList.add('hidden');
             });
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (otherIcon !== icon) otherIcon.classList.remove('rotate-180');
             });
 
-            // Toggle konten dan ikon
+            // Toggle content and icon
             content.classList.toggle('hidden');
             icon.classList.toggle('rotate-180');
         });
